@@ -176,8 +176,8 @@ def process_lecture(manifest: dict, registry: dict, env: Environment):
     html_file.write_text(html_content, encoding="utf-8")
     print(f"  [HTML] {html_file.relative_to(BASE)}", file=sys.stderr)
 
-    # Render PDF HTML (print-optimized, no nav)
-    pdf_html_content = render_html("lecture-print.html", context, env)
+    # Render PDF HTML (print-optimized, answers hidden — visit the page to see answers)
+    pdf_html_content = render_html("lecture-print.html", {**context, "hide_answers": True}, env)
     pdf_html_file = out_dir / "_print.html"
     pdf_html_file.write_text(pdf_html_content, encoding="utf-8")
 

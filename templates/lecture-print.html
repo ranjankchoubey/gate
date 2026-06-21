@@ -147,6 +147,7 @@
   {% endfor %}
 {% endfor %}
 
+{% if not hide_answers %}
 <!-- Answer Key — starts on new page -->
 <div class="answer-key">
   <div class="answer-key-heading">Answer Key</div>
@@ -165,6 +166,7 @@
     {% endfor %}
   </div>
 </div>
+{% endif %}
 
 <div class="pdf-footer">© 2026 Ranjan Kumar Choubey · CC BY-NC 4.0 · {{ course }} · {{ slug }} · ranjankchoubey.github.io/gate</div>
 
