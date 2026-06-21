@@ -7,7 +7,6 @@ Source: Cengage — Discrete Mathematics Practice Questions
 ## Q001
 
 [MCQ]
-[PYQ: GATE DA 2024]
 
 In a class, there are 15 boys and 10 girls. How many ways can a teacher select 1 boy and 1 girl to represent the class at a seminar?
 

@@ -7,7 +7,6 @@ Source: GATE-DA Syllabus — Probability and Statistics
 ## Q201
 
 [MCQ]
-[PYQ: GATE DA 2024]
 
 For two events $A$ and $B$ with $P(B) > 0$, the conditional probability $P(A|B)$ is defined as:
 

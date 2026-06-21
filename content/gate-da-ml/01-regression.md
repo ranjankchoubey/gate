@@ -7,7 +7,6 @@ Source: GATE-DA Syllabus — Machine Learning
 ## Q901
 
 [MCQ]
-[PYQ: GATE DA 2024]
 
 Given a dataset with $n = 5$ points, the total sum of squares is $\text{SST} = 200$ and the residual sum of squares is $\text{SSR} = 50$. What is the value of $R^2$?
 
