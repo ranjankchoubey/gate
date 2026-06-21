@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <link rel="canonical" href="{{ canonical_url }}" />
+  <!-- MathJax v3 -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #fafafa;
+      color: #1a1a1a;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 0 5rem;
+    }
+
+    /* Header */
+    .lecture-header {
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .lecture-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      font-family: 'Courier New', monospace;
+    }
+    .lecture-title {
+      font-size: 1.6rem;
+      font-weight: normal;
+      margin-top: 0.3rem;
+    }
+    .lecture-meta {
+      font-size: 0.82rem;
+      color: #888;
+      margin-top: 0.4rem;
+    }
+
+    /* Actions bar */
+    .actions {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      align-items: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      font-size: 0.82rem;
+      font-family: 'Courier New', monospace;
+      border: 1px solid #333;
+      color: #333;
+      text-decoration: none;
+      cursor: pointer;
+      background: white;
+      letter-spacing: 0.04em;
+    }
+    .btn:hover { background: #1a1a1a; color: white; }
+
+    /* QR */
+    .qr-block { text-align: center; margin-bottom: 2rem; }
+    .qr-block img { width: 120px; height: 120px; }
+    .qr-block p { font-size: 0.75rem; color: #888; margin-top: 0.4rem; font-family: monospace; }
+
+    /* Questions */
+    .questions { list-style: none; }
+
+    .question-item {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .question-item:last-child { border-bottom: none; }
+
+    .q-number {
+      font-size: 0.75rem;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 0.6rem;
+    }
+
+    .q-body { font-size: 1rem; }
+    .q-body p { margin-bottom: 0.6rem; }
+    .q-body ul, .q-body ol { margin-left: 1.5rem; margin-bottom: 0.6rem; }
+    .q-body code { font-family: 'Courier New', monospace; background: #f0f0f0; padding: 0.1em 0.3em; border-radius: 2px; }
+    .q-body pre { background: #f4f4f4; padding: 1rem; overflow-x: auto; margin-bottom: 0.8rem; }
+    .q-body table { border-collapse: collapse; width: 100%; margin-bottom: 0.8rem; }
+    .q-body th, .q-body td { border: 1px solid #ccc; padding: 0.4rem 0.8rem; }
+
+    /* Solution toggle */
+    .solution-wrap { margin-top: 1rem; }
+    .solution-toggle {
+      font-size: 0.78rem;
+      font-family: 'Courier New', monospace;
+      color: #555;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      letter-spacing: 0.05em;
+    }
+    .solution-toggle:hover { color: #1a1a1a; text-decoration: underline; }
+    .solution-body {
+      display: none;
+      margin-top: 0.8rem;
+      padding: 0.8rem 1rem;
+      background: #f8f8f8;
+      border-left: 3px solid #aaa;
+      font-size: 0.9rem;
+    }
+    .solution-body.visible { display: block; }
+    .answer-line {
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    .page-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.78rem;
+      color: #aaa;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header class="lecture-header">
+    <div class="lecture-label">{{ course | replace('-', ' ') | upper }} · Practice Set</div>
+    <h1 class="lecture-title">{{ title }}</h1>
+    <div class="lecture-meta">{{ num_questions }} question{% if num_questions != 1 %}s{% endif %}</div>
+  </header>
+
+  <div class="actions">
+    <a class="btn" href="{{ pdf_filename }}" download>↓ Download PDF</a>
+    <button class="btn" onclick="toggleAllSolutions()">Show / Hide Solutions</button>
+  </div>
+
+  {% if qr_filename %}
+  <div class="qr-block">
+    <img src="{{ qr_filename }}" alt="QR Code for this practice set" />
+    <p>Scan to open on mobile</p>
+  </div>
+  {% endif %}
+
+  <ol class="questions">
+    {% for q in questions %}
+    <li class="question-item">
+      <div class="q-number">Question {{ loop.index }}</div>
+      <div class="q-body">{{ q.body | markdown }}</div>
+
+      {% if q.answer or q.solution %}
+      <div class="solution-wrap">
+        <button class="solution-toggle" onclick="toggleSolution(this)">▶ Show solution</button>
+        <div class="solution-body">
+          {% if q.answer %}
+          <div class="answer-line">Answer: {{ q.answer }}</div>
+          {% endif %}
+          {% if q.solution %}
+          <div>{{ q.solution | markdown }}</div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+
+  <footer class="page-footer">
+    {{ course }} · {{ slug }} · {{ canonical_url }}
+  </footer>
+
+</div>
+
+<script>
+function toggleSolution(btn) {
+  const body = btn.nextElementSibling;
+  body.classList.toggle('visible');
+  btn.textContent = body.classList.contains('visible') ? '▼ Hide solution' : '▶ Show solution';
+}
+function toggleAllSolutions() {
+  const all = document.querySelectorAll('.solution-body');
+  const anyHidden = [...all].some(el => !el.classList.contains('visible'));
+  all.forEach(el => el.classList.toggle('visible', anyHidden));
+  document.querySelectorAll('.solution-toggle').forEach(btn => {
+    const body = btn.nextElementSibling;
+    btn.textContent = body.classList.contains('visible') ? '▼ Hide solution' : '▶ Show solution';
+  });
+}
+</script>
+</body>
+</html>

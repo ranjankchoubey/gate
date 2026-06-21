@@ -1,0 +1,14 @@
+title: "Counting and Combinatorics — Basics"
+course: discrete-math
+slug: counting-basics
+date: "2026-06-21"
+
+description: >
+  Fundamental counting principles: multiplication rule, ordered pairs,
+  and combinatorial reasoning from Cengage practice set.
+
+questions:
+  - Q001
+  - Q002
+  - Q003
+  - Q004

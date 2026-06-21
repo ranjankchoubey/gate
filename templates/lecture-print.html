@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    @page { size: A4; margin: 20mm 18mm; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #111;
+    }
+
+    .pdf-header {
+      border-bottom: 1.5pt solid #111;
+      padding-bottom: 8pt;
+      margin-bottom: 20pt;
+    }
+    .pdf-label {
+      font-size: 8pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555;
+      font-family: 'Courier New', monospace;
+    }
+    .pdf-title {
+      font-size: 15pt;
+      font-weight: normal;
+      margin-top: 3pt;
+    }
+
+    .question-item {
+      margin-bottom: 22pt;
+      page-break-inside: avoid;
+    }
+    .q-number {
+      font-size: 7.5pt;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 4pt;
+    }
+    .q-body p { margin-bottom: 5pt; }
+    .q-body ul, .q-body ol { margin-left: 18pt; margin-bottom: 5pt; }
+    .q-body code { font-family: 'Courier New', monospace; background: #f0f0f0; padding: 0 2pt; }
+    .q-body pre { background: #f4f4f4; padding: 8pt; font-size: 9pt; margin-bottom: 6pt; }
+    .q-body table { border-collapse: collapse; width: 100%; font-size: 9.5pt; }
+    .q-body th, .q-body td { border: 0.5pt solid #bbb; padding: 3pt 6pt; }
+
+    /* No solution in print — students work it out */
+    .solution-wrap { display: none; }
+
+    .pdf-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 7.5pt;
+      color: #aaa;
+      font-family: monospace;
+      padding-bottom: 4mm;
+    }
+  </style>
+</head>
+<body>
+
+<div class="pdf-header">
+  <div class="pdf-label">{{ course | replace('-', ' ') | upper }} · Practice Set</div>
+  <h1 class="pdf-title">{{ title }}</h1>
+</div>
+
+<ol style="list-style: none;">
+  {% for q in questions %}
+  <li class="question-item">
+    <div class="q-number">Question {{ loop.index }}</div>
+    <div class="q-body">{{ q.body | markdown }}</div>
+  </li>
+  {% endfor %}
+</ol>
+
+<div class="pdf-footer">{{ course }} · {{ slug }}</div>
+
+</body>
+</html>

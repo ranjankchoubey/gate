@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Sets</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Georgia', serif; background: #fafafa; color: #1a1a1a; line-height: 1.7; padding: 0 1rem; }
+    .page-wrap { max-width: 720px; margin: 0 auto; padding: 3rem 0 5rem; }
+    h1 { font-size: 1.8rem; font-weight: normal; border-bottom: 2px solid #1a1a1a; padding-bottom: 1rem; margin-bottom: 2rem; }
+    h2 { font-size: 1rem; font-family: 'Courier New', monospace; letter-spacing: 0.08em; text-transform: uppercase; color: #555; margin: 2rem 0 0.8rem; }
+    ul { list-style: none; }
+    li { margin-bottom: 0.5rem; }
+    a { color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #ccc; }
+    a:hover { border-bottom-color: #1a1a1a; }
+    .meta { font-size: 0.8rem; color: #888; font-family: monospace; margin-left: 0.5rem; }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+  <h1>Practice Sets</h1>
+  {% for course, lectures in courses.items() %}
+  <h2>{{ course | replace('-', ' ') }}</h2>
+  <ul>
+    {% for lec in lectures %}
+    <li>
+      <a href="{{ lec.url }}">{{ lec.title }}</a>
+      <span class="meta">{{ lec.num_questions }}q</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>
+</body>
+</html>
