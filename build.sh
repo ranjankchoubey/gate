@@ -4,6 +4,11 @@ set -e
 
 cd "$(dirname "$0")"
 
+# Activate venv automatically
+if [ -f ".venv/bin/activate" ]; then
+  source .venv/bin/activate
+fi
+
 echo "=== Validating question bank ==="
 python3 scripts/parse.py
 
@@ -13,4 +18,4 @@ python3 scripts/generate.py
 
 echo ""
 echo "=== Done ==="
-echo "Open: docs/discrete-math/lecture/counting-basics/index.html"
+echo "Open: docs/gate-da-prob-stats/lecture/01-counting-combinatorics/index.html"
