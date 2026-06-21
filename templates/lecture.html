@@ -24,9 +24,9 @@
       --green:       #16a34a;
       --green-bg:    #f0fdf4;
       --text:        #0f172a;
-      --text-2:      #334155;
-      --text-3:      #64748b;
-      --text-4:      #94a3b8;
+      --text-2:      #1e293b;
+      --text-3:      #475569;
+      --text-4:      #64748b;
       --bg:          #f1f5f9;
       --surface:     #ffffff;
       --border:      #e2e8f0;
@@ -190,11 +190,11 @@
     .section-group + .section-group { margin-top: 2.75rem; }
 
     .section-label {
-      font-size: 0.65rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--text-4);
+      color: var(--text-2);
       margin-bottom: 0.85rem;
       scroll-margin-top: 1.5rem;
     }
@@ -216,9 +216,9 @@
       margin-bottom: 0.8rem;
     }
     .q-num {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      color: var(--text-4);
+      color: var(--text-2);
       letter-spacing: 0.04em;
     }
     .q-tag {
@@ -236,6 +236,17 @@
     .q-tag.msq  { color: #065f46; border-color: #6ee7b7; background: #f0fdf4; }
     .q-tag.subj { color: #9d174d; border-color: #f9a8d4; background: #fdf2f8; }
     .q-tag.code { color: #1e40af; border-color: #bfdbfe; background: #eff6ff; }
+    .q-pyq {
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.1rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #c7d2fe;
+      color: #3730a3;
+      background: #eef2ff;
+      text-transform: uppercase;
+    }
 
     /* Question body */
     .q-body {
@@ -260,6 +271,7 @@
       padding: 0.18rem 0;
       color: var(--text-2);
     }
+    .q-body ul li strong { font-weight: 500; }
 
     /* Ordered lists (numbered sub-parts) */
     .q-body ol { margin-left: 1.4rem; margin-bottom: 0.55rem; }
@@ -440,8 +452,6 @@
     <div class="header-row">
       <span class="header-meta">
         <span>{{ num_questions }} questions</span>
-        <span class="meta-dot">·</span>
-        <span>Answers included</span>
       </span>
       <a class="btn btn-solid" href="{{ pdf_filename }}" download>↓ Download PDF</a>
       <button class="btn btn-outline" onclick="toggleAllAnswers()">Show / Hide All Answers</button>
@@ -488,6 +498,7 @@
           <div class="q-top">
             <span class="q-num">{{ ns.qnum }}</span>
             <span class="q-tag {{ q.type | lower }}">{{ q.type }}</span>
+            {% if q.pyq %}<span class="q-pyq">{{ q.pyq }}</span>{% endif %}
           </div>
           <div class="q-body">{{ q.body | markdown }}</div>
 

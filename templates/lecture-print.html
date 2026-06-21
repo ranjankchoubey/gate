@@ -37,11 +37,12 @@
       margin-bottom: 2pt;
     }
     .pdf-label {
-      font-size: 8pt;
-      letter-spacing: 0.1em;
+      font-size: 8.5pt;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #555;
-      font-family: 'Courier New', monospace;
+      color: #222;
+      font-family: 'Georgia', serif;
+      font-weight: bold;
     }
     .pdf-title {
       font-size: 15pt;
@@ -51,12 +52,13 @@
 
     /* Section headings in print */
     .pdf-section-heading {
-      font-size: 8pt;
-      font-family: 'Courier New', monospace;
-      letter-spacing: 0.12em;
+      font-size: 9.5pt;
+      font-family: 'Georgia', serif;
+      font-weight: bold;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
-      color: #555;
-      border-bottom: 0.5pt solid #ccc;
+      color: #222;
+      border-bottom: 0.75pt solid #999;
       padding-bottom: 4pt;
       margin: 18pt 0 12pt;
     }
@@ -69,14 +71,16 @@
       page-break-inside: avoid;
     }
     .q-number {
-      font-size: 7.5pt;
-      font-family: 'Courier New', monospace;
-      letter-spacing: 0.1em;
+      font-size: 8.5pt;
+      font-family: 'Georgia', serif;
+      font-weight: bold;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #777;
+      color: #111;
       margin-bottom: 4pt;
     }
     .q-body p { margin-bottom: 5pt; }
+    .q-body ul li strong { font-weight: 500; }
     .q-body ul, .q-body ol { margin-left: 18pt; margin-bottom: 5pt; }
     .q-body code { font-family: 'Courier New', monospace; background: #f0f0f0; padding: 0 2pt; }
     .q-body pre { background: #f4f4f4; padding: 8pt; font-size: 9pt; margin-bottom: 6pt; }
@@ -94,7 +98,7 @@
       font-family: 'Courier New', monospace;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #555;
+      color: #333;
       border-bottom: 1.5pt solid #111;
       padding-bottom: 6pt;
       margin-bottom: 14pt;
@@ -113,7 +117,7 @@
     .ans-qnum {
       font-family: 'Courier New', monospace;
       font-size: 8pt;
-      color: #777;
+      color: #444;
       flex-shrink: 0;
       min-width: 18pt;
     }
@@ -151,7 +155,7 @@
   {% for q in section.questions %}
   {% set ns.qnum = ns.qnum + 1 %}
   <div class="question-item">
-    <div class="q-number">Question {{ ns.qnum }} &nbsp;·&nbsp; {{ q.type }}</div>
+    <div class="q-number">Question {{ ns.qnum }} &nbsp;·&nbsp; {{ q.type }}{% if q.pyq %} &nbsp;·&nbsp; {{ q.pyq }}{% endif %}</div>
     <div class="q-body">{{ q.body | markdown }}</div>
   </div>
   {% endfor %}

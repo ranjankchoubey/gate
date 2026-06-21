@@ -13,6 +13,8 @@ from pathlib import Path
 QUESTION_HEADER = re.compile(r"^## (Q\d{3,5})\s*$", re.MULTILINE)
 # Regex: type tag [MCQ], [NAT], [MSQ], [SUBJ], [CODE], [CASE]
 TYPE_TAG = re.compile(r"^\[(\w+)\]$", re.MULTILINE)
+# Optional PYQ tag: [PYQ: GATE DA 2023] or [PYQ: GATE CS 2024]
+PYQ_TAG = re.compile(r"^\[PYQ:\s*(.+?)\]$", re.MULTILINE)
 # Answer and solution extraction
 ANSWER_LINE = re.compile(r"^\*\*Answer:\*\*\s*(.+)$", re.MULTILINE)
 SOLUTION_LINE = re.compile(r"^\*\*Solution:\*\*\s*([\s\S]+?)(?=\n---|\Z)", re.MULTILINE)
@@ -78,6 +80,12 @@ def parse_file(md_file: Path, base_dir: Path) -> tuple[dict, list]:
         # Remove type tag from body
         body_no_type = TYPE_TAG.sub("", body_raw, count=1).strip()
 
+        # Extract optional PYQ tag e.g. [PYQ: GATE DA 2023]
+        pyq_match = PYQ_TAG.search(body_no_type)
+        pyq = pyq_match.group(1).strip() if pyq_match else None
+        if pyq_match:
+            body_no_type = PYQ_TAG.sub("", body_no_type, count=1).strip()
+
         # Extract answer and solution
         answer_match = ANSWER_LINE.search(body_no_type)
         solution_match = SOLUTION_LINE.search(body_no_type)
@@ -93,6 +101,7 @@ def parse_file(md_file: Path, base_dir: Path) -> tuple[dict, list]:
         questions[qid] = {
             "id": qid,
             "type": qtype,
+            "pyq": pyq,
             "body": student_body,
             "answer": answer,
             "solution": solution,
