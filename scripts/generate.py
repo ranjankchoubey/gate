@@ -285,7 +285,7 @@ def main():
 
     print("[generate] Processing lectures...", file=sys.stderr)
     all_lectures = []
-    published_dirs: set[Path] = set()
+    published_dirs = set()  # set of Path objects for published chapter dirs
 
     for yaml_file in sorted(LECTURES_DIR.rglob("*.yaml")):
         manifest = load_manifest(yaml_file)
