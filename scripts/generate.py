@@ -41,7 +41,7 @@ DOCS_DIR = BASE / "docs"
 SCRIPTS_DIR = BASE / "scripts"
 
 # Base URL for published site (no trailing slash)
-SITE_BASE_URL = "https://ranjanchoubey.github.io/practice-sets"
+SITE_BASE_URL = "https://ranjanchoubey.github.io/practice"
 
 
 def load_manifest(yaml_file: Path) -> dict:
@@ -154,6 +154,11 @@ def process_lecture(manifest: dict, registry: dict, env: Environment):
         "qr_filename": qr_filename,
         "num_questions": total_questions,
     }
+
+    # Copy course-level images into output dir (so img/foo.png resolves from index.html)
+    img_src = CONTENT_DIR / course / "img"
+    if img_src.exists():
+        shutil.copytree(img_src, out_dir / "img", dirs_exist_ok=True)
 
     # Render HTML
     html_content = render_html("lecture.html", context, env)
