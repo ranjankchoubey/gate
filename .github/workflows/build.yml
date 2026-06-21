@@ -37,11 +37,10 @@ jobs:
         run: python scripts/generate.py
 
       - name: Deploy to public pages repo
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          token: ${{ secrets.PAGES_DEPLOY_TOKEN }}
-          repository-name: ranjankchoubey/gate-2027
-          branch: main
-          folder: docs
-          clean: true
-          single-commit: true
+          personal_token: ${{ secrets.PAGES_DEPLOY_TOKEN }}
+          external_repository: ranjankchoubey/gate-2027
+          publish_branch: main
+          publish_dir: ./docs
+          force_orphan: true
