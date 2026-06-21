@@ -1,12 +1,27 @@
-title: "Conditional Probability, Bayes' Theorem and Independence"
+title: Conditional Probability, Bayes' Theorem and Independence
 course: gate-da-prob-stats
 slug: 03-conditional-probability-bayes
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "Conditional Probability"
-    questions: [Q201, Q202, Q203]
-  - heading: "Independence"
-    questions: [Q204, Q205, Q206]
-  - heading: "Bayes' Theorem"
-    questions: [Q207, Q208, Q209, Q210]
+- heading: Conditional Probability
+  questions:
+  - Q201
+  - Q202
+  - Q203
+- heading: Independence
+  questions:
+  - Q204
+  - Q205
+  - Q206
+- heading: Bayes' Theorem
+  questions:
+  - Q207
+  - Q208
+  - Q209
+  - Q210
+- heading: PYQ — Conditional Probability, Bayes' Theorem and Independence
+  questions:
+  - Q5004
+  - Q5005
+  - Q5006
+  - Q5007

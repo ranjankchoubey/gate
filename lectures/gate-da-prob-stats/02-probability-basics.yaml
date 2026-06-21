@@ -10,3 +10,5 @@ sections:
     questions: [Q104, Q105, Q106, Q107]
   - heading: "Equally Likely Outcomes"
     questions: [Q108, Q109, Q110]
+  - heading: "PYQ — Probability Basics"
+    questions: [Q5001, Q5002]

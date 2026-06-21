@@ -1,12 +1,26 @@
-title: "Support Vector Machines and Decision Trees"
+title: Support Vector Machines and Decision Trees
 course: gate-da-ml
 slug: 04-classification-svm-trees
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "SVM — Hard and Soft Margin"
-    questions: [Q1201, Q1202, Q1203]
-  - heading: "Kernel Trick"
-    questions: [Q1204, Q1205]
-  - heading: "Decision Trees"
-    questions: [Q1206, Q1207, Q1208, Q1209, Q1210]
+- heading: SVM — Hard and Soft Margin
+  questions:
+  - Q1201
+  - Q1202
+  - Q1203
+- heading: Kernel Trick
+  questions:
+  - Q1204
+  - Q1205
+- heading: Decision Trees
+  questions:
+  - Q1206
+  - Q1207
+  - Q1208
+  - Q1209
+  - Q1210
+- heading: PYQ — Support Vector Machines and Decision Trees
+  questions:
+  - Q5047
+  - Q5048
+  - Q5049

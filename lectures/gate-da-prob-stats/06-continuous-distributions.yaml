@@ -1,12 +1,33 @@
-title: "Continuous Probability Distributions"
+title: Continuous Probability Distributions
 course: gate-da-prob-stats
 slug: 06-continuous-distributions
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "Uniform Distribution"
-    questions: [Q501, Q502, Q503]
-  - heading: "Exponential Distribution"
-    questions: [Q504, Q505, Q506, Q510]
-  - heading: "Normal Distribution"
-    questions: [Q507, Q508, Q509]
+- heading: Uniform Distribution
+  questions:
+  - Q501
+  - Q502
+  - Q503
+- heading: Exponential Distribution
+  questions:
+  - Q504
+  - Q505
+  - Q506
+  - Q510
+- heading: Normal Distribution
+  questions:
+  - Q507
+  - Q508
+  - Q509
+- heading: PYQ — Continuous Probability Distributions
+  questions:
+  - Q5016
+  - Q5017
+  - Q5018
+  - Q5019
+  - Q5020
+  - Q5021
+  - Q5022
+  - Q5023
+  - Q5024
+  - Q5025

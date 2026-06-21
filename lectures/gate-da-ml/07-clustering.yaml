@@ -1,12 +1,28 @@
-title: "Clustering — K-Means and Hierarchical"
+title: Clustering — K-Means and Hierarchical
 course: gate-da-ml
 slug: 07-clustering
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "K-Means"
-    questions: [Q1501, Q1502, Q1503, Q1504]
-  - heading: "Hierarchical Clustering"
-    questions: [Q1505, Q1506, Q1507, Q1508]
-  - heading: "Cluster Evaluation"
-    questions: [Q1509, Q1510]
+- heading: K-Means
+  questions:
+  - Q1501
+  - Q1502
+  - Q1503
+  - Q1504
+- heading: Hierarchical Clustering
+  questions:
+  - Q1505
+  - Q1506
+  - Q1507
+  - Q1508
+- heading: Cluster Evaluation
+  questions:
+  - Q1509
+  - Q1510
+- heading: PYQ — Clustering — K-Means and Hierarchical
+  questions:
+  - Q5057
+  - Q5058
+  - Q5059
+  - Q5060
+  - Q5061

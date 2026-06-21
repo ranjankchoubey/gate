@@ -1,12 +1,25 @@
-title: "Linear Regression — Simple and Multiple"
+title: Linear Regression — Simple and Multiple
 course: gate-da-ml
 slug: 01-regression
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "Simple Linear Regression"
-    questions: [Q901, Q902, Q903]
-  - heading: "Model Evaluation"
-    questions: [Q904, Q905, Q906]
-  - heading: "Gradient Descent"
-    questions: [Q907, Q908, Q909, Q910]
+- heading: Simple Linear Regression
+  questions:
+  - Q901
+  - Q902
+  - Q903
+- heading: Model Evaluation
+  questions:
+  - Q904
+  - Q905
+  - Q906
+- heading: Gradient Descent
+  questions:
+  - Q907
+  - Q908
+  - Q909
+  - Q910
+- heading: PYQ — Linear Regression — Simple and Multiple
+  questions:
+  - Q5034
+  - Q5035

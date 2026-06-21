@@ -1,12 +1,28 @@
-title: "K-Nearest Neighbours, Naive Bayes, and LDA"
+title: K-Nearest Neighbours, Naive Bayes, and LDA
 course: gate-da-ml
 slug: 03-classification-probabilistic
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "KNN"
-    questions: [Q1101, Q1102, Q1103, Q1104]
-  - heading: "Naive Bayes"
-    questions: [Q1105, Q1106, Q1107]
-  - heading: "LDA"
-    questions: [Q1108, Q1109, Q1110]
+- heading: KNN
+  questions:
+  - Q1101
+  - Q1102
+  - Q1103
+  - Q1104
+- heading: Naive Bayes
+  questions:
+  - Q1105
+  - Q1106
+  - Q1107
+- heading: LDA
+  questions:
+  - Q1108
+  - Q1109
+  - Q1110
+- heading: PYQ — K-Nearest Neighbours, Naive Bayes, and LDA
+  questions:
+  - Q5042
+  - Q5043
+  - Q5044
+  - Q5045
+  - Q5046

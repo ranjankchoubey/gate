@@ -1,12 +1,29 @@
-title: "Ridge Regression and Logistic Regression"
+title: Ridge Regression and Logistic Regression
 course: gate-da-ml
 slug: 02-classification
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "Ridge Regression"
-    questions: [Q1001, Q1002, Q1003]
-  - heading: "Logistic Regression"
-    questions: [Q1004, Q1005, Q1006, Q1007, Q1008]
-  - heading: "Decision Boundary and Regularisation"
-    questions: [Q1009, Q1010]
+- heading: Ridge Regression
+  questions:
+  - Q1001
+  - Q1002
+  - Q1003
+- heading: Logistic Regression
+  questions:
+  - Q1004
+  - Q1005
+  - Q1006
+  - Q1007
+  - Q1008
+- heading: Decision Boundary and Regularisation
+  questions:
+  - Q1009
+  - Q1010
+- heading: PYQ — Ridge Regression and Logistic Regression
+  questions:
+  - Q5036
+  - Q5037
+  - Q5038
+  - Q5039
+  - Q5040
+  - Q5041

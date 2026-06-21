@@ -243,8 +243,29 @@ def main():
     try:
         import markdown
         md_extensions = ["tables", "fenced_code", "footnotes"]
+
         def md_filter(text):
-            return markdown.markdown(text, extensions=md_extensions)
+            # Protect LaTeX math from Markdown escaping (\{, \[, etc.)
+            stash = []
+
+            def save(m):
+                stash.append(m.group(0))
+                return f"\x02MATH{len(stash) - 1}\x03"
+
+            # Display math first (greedy would eat inline)
+            t = re.sub(r'\$\$[\s\S]*?\$\$', save, text)
+            t = re.sub(r'\\\[[\s\S]*?\\\]', save, t)
+            # Inline math
+            t = re.sub(r'\$[^\$\n]+?\$', save, t)
+            t = re.sub(r'\\\([\s\S]*?\\\)', save, t)
+
+            html = markdown.markdown(t, extensions=md_extensions)
+
+            # Restore math verbatim
+            for i, block in enumerate(stash):
+                html = html.replace(f"\x02MATH{i}\x03", block)
+            return html
+
         env.filters["markdown"] = md_filter
     except ImportError:
         def md_filter(text):

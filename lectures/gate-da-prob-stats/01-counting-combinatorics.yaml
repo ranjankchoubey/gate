@@ -1,12 +1,26 @@
-title: "Counting, Permutations and Combinations"
+title: Counting, Permutations and Combinations
 course: gate-da-prob-stats
 slug: 01-counting-combinatorics
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "Product Rule & Multiplication Principle"
-    questions: [Q001, Q002, Q003, Q004]
-  - heading: "Permutations"
-    questions: [Q005, Q006, Q007, Q008]
-  - heading: "Combinations"
-    questions: [Q009, Q010, Q011, Q012]
+- heading: Product Rule & Multiplication Principle
+  questions:
+  - Q001
+  - Q002
+  - Q003
+  - Q004
+- heading: Permutations
+  questions:
+  - Q005
+  - Q006
+  - Q007
+  - Q008
+- heading: Combinations
+  questions:
+  - Q009
+  - Q010
+  - Q011
+  - Q012
+- heading: PYQ — Counting, Permutations and Combinations
+  questions:
+  - Q5003

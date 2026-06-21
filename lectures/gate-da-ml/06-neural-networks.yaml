@@ -1,12 +1,28 @@
-title: "Neural Networks and Multi-Layer Perceptron"
+title: Neural Networks and Multi-Layer Perceptron
 course: gate-da-ml
 slug: 06-neural-networks
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "Architecture and Activation"
-    questions: [Q1401, Q1402, Q1403, Q1404]
-  - heading: "Backpropagation"
-    questions: [Q1405, Q1406]
-  - heading: "Training"
-    questions: [Q1407, Q1408, Q1409, Q1410]
+- heading: Architecture and Activation
+  questions:
+  - Q1401
+  - Q1402
+  - Q1403
+  - Q1404
+- heading: Backpropagation
+  questions:
+  - Q1405
+  - Q1406
+- heading: Training
+  questions:
+  - Q1407
+  - Q1408
+  - Q1409
+  - Q1410
+- heading: PYQ — Neural Networks and Multi-Layer Perceptron
+  questions:
+  - Q5052
+  - Q5053
+  - Q5054
+  - Q5055
+  - Q5056

@@ -1,12 +1,25 @@
-title: "Random Variables, PMF, CDF and Expectation"
+title: Random Variables, PMF, CDF and Expectation
 course: gate-da-prob-stats
 slug: 04-random-variables
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "PMF & Valid Distributions"
-    questions: [Q301, Q302, Q303]
-  - heading: "Expectation & Variance"
-    questions: [Q304, Q305, Q306, Q307]
-  - heading: "CDF"
-    questions: [Q308, Q309, Q310]
+- heading: PMF & Valid Distributions
+  questions:
+  - Q301
+  - Q302
+  - Q303
+- heading: Expectation & Variance
+  questions:
+  - Q304
+  - Q305
+  - Q306
+  - Q307
+- heading: CDF
+  questions:
+  - Q308
+  - Q309
+  - Q310
+- heading: PYQ — Random Variables, PMF, CDF and Expectation
+  questions:
+  - Q5008
+  - Q5009

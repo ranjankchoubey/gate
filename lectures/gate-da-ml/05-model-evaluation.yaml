@@ -1,12 +1,25 @@
-title: "Bias-Variance Tradeoff and Cross-Validation"
+title: Bias-Variance Tradeoff and Cross-Validation
 course: gate-da-ml
 slug: 05-model-evaluation
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "Bias-Variance Decomposition"
-    questions: [Q1301, Q1302, Q1303]
-  - heading: "Regularisation"
-    questions: [Q1304, Q1308, Q1309]
-  - heading: "Cross-Validation"
-    questions: [Q1305, Q1306, Q1307, Q1310]
+- heading: Bias-Variance Decomposition
+  questions:
+  - Q1301
+  - Q1302
+  - Q1303
+- heading: Regularisation
+  questions:
+  - Q1304
+  - Q1308
+  - Q1309
+- heading: Cross-Validation
+  questions:
+  - Q1305
+  - Q1306
+  - Q1307
+  - Q1310
+- heading: PYQ — Bias-Variance Tradeoff and Cross-Validation
+  questions:
+  - Q5050
+  - Q5051

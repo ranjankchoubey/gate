@@ -1,12 +1,26 @@
-title: "Central Limit Theorem and Confidence Intervals"
+title: Central Limit Theorem and Confidence Intervals
 course: gate-da-prob-stats
 slug: 08-clt-confidence-intervals
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "Central Limit Theorem"
-    questions: [Q701, Q702, Q703, Q704]
-  - heading: "Confidence Intervals"
-    questions: [Q705, Q706, Q707, Q708]
-  - heading: "Sample Size Determination"
-    questions: [Q709, Q710]
+- heading: Central Limit Theorem
+  questions:
+  - Q701
+  - Q702
+  - Q703
+  - Q704
+- heading: Confidence Intervals
+  questions:
+  - Q705
+  - Q706
+  - Q707
+  - Q708
+- heading: Sample Size Determination
+  questions:
+  - Q709
+  - Q710
+- heading: PYQ — Central Limit Theorem and Confidence Intervals
+  questions:
+  - Q5026
+  - Q5027
+  - Q5028

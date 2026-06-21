@@ -1,12 +1,26 @@
-title: "Principal Component Analysis and Dimensionality Reduction"
+title: Principal Component Analysis and Dimensionality Reduction
 course: gate-da-ml
 slug: 08-pca
-date: "2026-06-21"
-
+date: '2026-06-21'
 sections:
-  - heading: "PCA Mechanics"
-    questions: [Q1601, Q1602, Q1603, Q1604]
-  - heading: "Explained Variance"
-    questions: [Q1605, Q1606, Q1607]
-  - heading: "Preprocessing and Applications"
-    questions: [Q1608, Q1609, Q1610]
+- heading: PCA Mechanics
+  questions:
+  - Q1601
+  - Q1602
+  - Q1603
+  - Q1604
+- heading: Explained Variance
+  questions:
+  - Q1605
+  - Q1606
+  - Q1607
+- heading: Preprocessing and Applications
+  questions:
+  - Q1608
+  - Q1609
+  - Q1610
+- heading: PYQ — Principal Component Analysis and Dimensionality Reduction
+  questions:
+  - Q5062
+  - Q5063
+  - Q5064
