@@ -176,7 +176,7 @@ The new section will automatically appear in the sidebar navigation.
 ## Rebuilding the Site
 
 ```bash
-cd /Users/vn59a0h/preparation/gate-2026/practice
+cd /Users/vn59a0h/preparation/gate-da/practice
 python scripts/generate.py
 ```
 
