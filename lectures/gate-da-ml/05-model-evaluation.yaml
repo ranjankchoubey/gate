@@ -2,6 +2,7 @@ title: Bias-Variance Tradeoff and Cross-Validation
 course: gate-da-ml
 slug: 05-model-evaluation
 date: '2026-06-21'
+draft: true
 sections:
 - heading: Bias-Variance Decomposition
   questions:

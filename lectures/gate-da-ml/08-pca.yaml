@@ -2,6 +2,7 @@ title: Principal Component Analysis and Dimensionality Reduction
 course: gate-da-ml
 slug: 08-pca
 date: '2026-06-21'
+draft: true
 sections:
 - heading: PCA Mechanics
   questions:

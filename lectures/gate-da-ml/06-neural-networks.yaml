@@ -2,6 +2,7 @@ title: Neural Networks and Multi-Layer Perceptron
 course: gate-da-ml
 slug: 06-neural-networks
 date: '2026-06-21'
+draft: true
 sections:
 - heading: Architecture and Activation
   questions:

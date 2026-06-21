@@ -2,6 +2,7 @@ title: Ridge Regression and Logistic Regression
 course: gate-da-ml
 slug: 02-classification
 date: '2026-06-21'
+draft: true
 sections:
 - heading: Ridge Regression
   questions:

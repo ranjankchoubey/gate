@@ -2,6 +2,7 @@ title: Clustering — K-Means and Hierarchical
 course: gate-da-ml
 slug: 07-clustering
 date: '2026-06-21'
+draft: true
 sections:
 - heading: K-Means
   questions:

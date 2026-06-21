@@ -2,6 +2,7 @@ title: Support Vector Machines and Decision Trees
 course: gate-da-ml
 slug: 04-classification-svm-trees
 date: '2026-06-21'
+draft: true
 sections:
 - heading: SVM — Hard and Soft Margin
   questions:

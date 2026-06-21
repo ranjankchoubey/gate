@@ -2,6 +2,7 @@ title: K-Nearest Neighbours, Naive Bayes, and LDA
 course: gate-da-ml
 slug: 03-classification-probabilistic
 date: '2026-06-21'
+draft: true
 sections:
 - heading: KNN
   questions:

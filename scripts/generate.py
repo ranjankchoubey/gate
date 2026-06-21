@@ -58,9 +58,10 @@ def load_manifest(yaml_file: Path) -> dict:
 
 def normalize_sections(manifest: dict) -> list:
     """Normalize manifest to sections list.
-    Backward-compat: flat questions: [...] → single unnamed section."""
+    Backward-compat: flat questions: [...] → single unnamed section.
+    Filters out sections marked draft: true."""
     if "sections" in manifest:
-        return manifest["sections"]
+        return [s for s in manifest["sections"] if not s.get("draft")]
     return [{"heading": None, "questions": manifest.get("questions", [])}]
 
 
@@ -247,11 +248,16 @@ def main():
 
         def md_filter(text):
             # Protect LaTeX math from Markdown escaping (\{, \[, etc.)
+            # Use pure-ASCII placeholder — control chars (\x02/\x03) are
+            # silently dropped by Python's markdown library.
             stash = []
+            _PFX = "MATHHSTASH"
+            _SFX = "XEND"
 
             def save(m):
+                idx = len(stash)
                 stash.append(m.group(0))
-                return f"\x02MATH{len(stash) - 1}\x03"
+                return f"{_PFX}{idx}{_SFX}"
 
             # Display math first (greedy would eat inline)
             t = re.sub(r'\$\$[\s\S]*?\$\$', save, text)
@@ -264,7 +270,7 @@ def main():
 
             # Restore math verbatim
             for i, block in enumerate(stash):
-                html = html.replace(f"\x02MATH{i}\x03", block)
+                html = html.replace(f"{_PFX}{i}{_SFX}", block)
             return html
 
         env.filters["markdown"] = md_filter
@@ -279,11 +285,24 @@ def main():
 
     print("[generate] Processing lectures...", file=sys.stderr)
     all_lectures = []
+    published_dirs: set[Path] = set()
+
     for yaml_file in sorted(LECTURES_DIR.rglob("*.yaml")):
         manifest = load_manifest(yaml_file)
+        if manifest.get("draft"):
+            print(f"\n  [DRAFT] {manifest['slug']} ({manifest['course']}) — skipped", file=sys.stderr)
+            continue
         print(f"\n  Lecture: {manifest['slug']} ({manifest['course']})", file=sys.stderr)
         result = process_lecture(manifest, registry, env)
         all_lectures.append(result)
+        published_dirs.add(DOCS_DIR / manifest["course"] / "lecture" / manifest["slug"])
+
+    # Remove stale docs dirs (chapters that were unpublished / marked draft)
+    for course_dir in (DOCS_DIR).glob("*/lecture"):
+        for chapter_dir in course_dir.iterdir():
+            if chapter_dir.is_dir() and chapter_dir not in published_dirs:
+                shutil.rmtree(chapter_dir)
+                print(f"\n  [CLEAN] removed stale dir: {chapter_dir.relative_to(BASE)}", file=sys.stderr)
 
     print("\n[generate] Building index...", file=sys.stderr)
     generate_index(all_lectures, env)
