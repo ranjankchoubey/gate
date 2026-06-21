@@ -17,7 +17,7 @@
       --text-2:    #334155;
       --text-3:    #64748b;
       --text-4:    #94a3b8;
-      --bg:        #f1f5f9;
+      --bg:        #f8fafc;
       --surface:   #ffffff;
       --border:    #e2e8f0;
       --border-2:  #cbd5e1;
@@ -33,101 +33,178 @@
       font-size: 15px;
     }
 
+    /* ─── HEADER ─── */
     .site-header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 0;
+      background: var(--text);
+      padding: 2.5rem 0;
     }
     .header-inner {
-      max-width: 1120px;
-      margin: 0 auto 0 max(2rem, calc((100vw - 1120px) * 0.3));
+      max-width: 960px;
+      margin: 0 auto;
       padding: 0 2rem;
     }
     .site-label {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-4);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
     }
     .site-title {
-      font-size: 1.45rem;
+      font-size: 1.75rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--text);
+      letter-spacing: -0.03em;
+      color: #fff;
     }
     .site-desc {
-      font-size: 0.83rem;
-      color: var(--text-3);
-      margin-top: 0.3rem;
+      font-size: 0.85rem;
+      color: var(--border-2);
+      margin-top: 0.4rem;
     }
 
-    .page-layout {
-      max-width: 1120px;
-      margin: 0 auto 0 max(2rem, calc((100vw - 1120px) * 0.3));
-      padding: 2rem 2rem 6rem;
+    /* ─── LAYOUT: sidebar + main ─── */
+    .page-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+      align-items: start;
     }
 
-    .course-block { margin-bottom: 2.5rem; }
-
-    .course-heading {
-      font-size: 0.62rem;
+    /* ─── SIDEBAR NAV ─── */
+    .sidebar {
+      position: sticky;
+      top: 1.5rem;
+    }
+    .nav-course {
+      margin-bottom: 1.8rem;
+    }
+    .nav-course-label {
+      font-size: 0.6rem;
       font-weight: 700;
       letter-spacing: 0.13em;
       text-transform: uppercase;
       color: var(--text-4);
-      margin-bottom: 0.85rem;
-      padding-bottom: 0.55rem;
-      border-bottom: 1px solid var(--border);
+      padding: 0 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .nav-chapters {
+      list-style: none;
+    }
+    .nav-chapter-link {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-3);
+      text-decoration: none;
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+      border-left: 2px solid transparent;
+      transition: all 0.12s;
+      line-height: 1.35;
+    }
+    .nav-chapter-link:hover {
+      color: var(--text);
+      background: var(--accent-bg);
+      border-left-color: var(--accent);
+    }
+    .nav-ch-num {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--text-4);
+      min-width: 1.2rem;
     }
 
-    .lecture-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 0.75rem;
+    /* ─── MAIN CONTENT ─── */
+    .main-content { min-width: 0; }
+
+    .course-block {
+      margin-bottom: 3rem;
+    }
+    .course-heading {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--accent);
     }
 
-    .lecture-card {
+    /* Chapter row */
+    .chapter-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .chapter-item {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--r);
-      padding: 1.1rem 1.25rem;
-      text-decoration: none;
-      display: block;
       transition: border-color 0.12s, box-shadow 0.12s;
     }
-    .lecture-card:hover {
+    .chapter-item:hover {
       border-color: var(--accent);
       box-shadow: 0 0 0 3px var(--accent-bg);
     }
-
-    .lc-title {
-      font-size: 0.92rem;
+    .chapter-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .ch-number {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-bg);
+      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      min-width: 2rem;
+      text-align: center;
+      margin-top: 0.1rem;
+    }
+    .ch-info { flex: 1; min-width: 0; }
+    .ch-title {
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--text);
       line-height: 1.4;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
-    .lc-meta {
-      font-size: 0.72rem;
+    .ch-sections {
+      font-size: 0.75rem;
       color: var(--text-4);
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
+      line-height: 1.5;
     }
-    .lc-badge {
+    .ch-sections span { white-space: nowrap; }
+    .ch-sections .sep { margin: 0 0.25rem; color: var(--border-2); }
+    .ch-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+    .ch-badge {
+      font-size: 0.62rem;
+      font-weight: 600;
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 4px;
-      padding: 0.05rem 0.4rem;
-      font-size: 0.66rem;
-      font-weight: 600;
+      padding: 0.1rem 0.4rem;
       color: var(--text-3);
     }
 
+    /* ─── FOOTER ─── */
     .page-footer {
-      margin-top: 3rem;
+      margin-top: 2rem;
       padding-top: 1rem;
       border-top: 1px solid var(--border);
       font-size: 0.71rem;
@@ -140,14 +217,20 @@
     .page-footer a { color: var(--text-4); text-decoration: none; }
     .page-footer a:hover { color: var(--text-3); }
 
-    @media (max-width: 860px) {
-      .header-inner { margin: 0; padding: 0 1rem; }
-      .page-layout { margin: 0; padding: 1.5rem 1rem 4rem; }
-      .lecture-grid { grid-template-columns: 1fr; }
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .page-wrapper {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem 4rem;
+        gap: 0;
+      }
+      .sidebar { display: none; }
+      .header-inner { padding: 0 1rem; }
     }
     @media (max-width: 560px) {
-      .site-header { padding: 1rem 0; }
-      .site-title { font-size: 1.2rem; }
+      .site-header { padding: 1.5rem 0; }
+      .site-title { font-size: 1.3rem; }
+      .chapter-link { padding: 0.85rem 1rem; gap: 0.75rem; }
     }
   </style>
 </head>
@@ -161,32 +244,62 @@
   </div>
 </header>
 
-<div class="page-layout">
+<div class="page-wrapper">
 
-  {% for course, lectures in courses.items() %}
-  <div class="course-block" id="{{ course }}">
-    <div class="course-heading">{{ course_names.get(course, course | replace('-', ' ') | title) }}</div>
-    <div class="lecture-grid">
-      {% for lec in lectures %}
-      <a class="lecture-card" href="{{ lec.url }}">
-        <div class="lc-title">{{ lec.title }}</div>
-        <div class="lc-meta">
-          <span class="lc-badge">{{ lec.num_questions }}Q</span>
-          <span>{{ lec.slug }}</span>
-        </div>
-      </a>
-      {% endfor %}
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+    {% for course, lectures in courses.items() %}
+    <div class="nav-course">
+      <div class="nav-course-label">{{ course_names.get(course, course | replace('-', ' ') | title) }}</div>
+      <ul class="nav-chapters">
+        {% for lec in lectures %}
+        <li>
+          <a class="nav-chapter-link" href="#{{ lec.slug }}">
+            <span class="nav-ch-num">{{ loop.index }}.</span>
+            <span>{{ lec.title }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
-  </div>
-  {% endfor %}
+    {% endfor %}
+  </nav>
 
-  <footer class="page-footer">
-    <span>© 2026 <a href="https://ranjankchoubey.github.io">Ranjan Kumar Choubey</a></span>
-    <span>·</span>
-    <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-    <span>·</span>
-    <span>Free to use for learning. Not for commercial redistribution.</span>
-  </footer>
+  <!-- Main Content -->
+  <div class="main-content">
+    {% for course, lectures in courses.items() %}
+    <div class="course-block" id="{{ course }}">
+      <div class="course-heading">{{ course_names.get(course, course | replace('-', ' ') | title) }}</div>
+      <ol class="chapter-list">
+        {% for lec in lectures %}
+        <li class="chapter-item" id="{{ lec.slug }}">
+          <a class="chapter-link" href="{{ lec.url }}">
+            <div class="ch-number">{{ loop.index }}</div>
+            <div class="ch-info">
+              <div class="ch-title">{{ lec.title }}</div>
+              {% if lec.sections %}
+              <div class="ch-sections">
+                {% for sec in lec.sections %}
+                <span>{{ sec }}</span>{% if not loop.last %}<span class="sep">·</span>{% endif %}
+                {% endfor %}
+              </div>
+              {% endif %}
+              <div class="ch-meta">
+                <span class="ch-badge">{{ lec.num_questions }} questions</span>
+                <span class="ch-badge">{{ lec.sections | length }} sections</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endfor %}
+
+    <footer class="page-footer">
+      <span>© 2026 <a href="https://ranjankchoubey.github.io">Ranjan Kumar Choubey</a></span>
+    </footer>
+  </div>
 
 </div>
 </body>

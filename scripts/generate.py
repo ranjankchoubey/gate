@@ -189,12 +189,16 @@ def process_lecture(manifest: dict, registry: dict, env: Environment):
     qr_file = out_dir / qr_filename
     generate_qr(canonical_url, qr_file)
 
+    # Section headings for index page
+    section_headings = [s["heading"] for s in raw_sections if s.get("heading")]
+
     return {
         "course": course,
         "slug": slug,
         "title": title,
-        "url": canonical_url,
+        "url": f"{course}/lecture/{slug}/",
         "num_questions": total_questions,
+        "sections": section_headings,
     }
 
 
