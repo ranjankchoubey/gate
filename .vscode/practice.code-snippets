@@ -1,0 +1,194 @@
+{
+  // ─── Question Templates ───────────────────────────────────────────────────
+  "MCQ Question": {
+    "prefix": "mcq",
+    "scope": "markdown",
+    "description": "GATE MCQ question block",
+    "body": [
+      "## Q${1:ID}",
+      "",
+      "[MCQ]",
+      "",
+      "${2:Question text here.}",
+      "",
+      "- **(A)** ${3:Option A}",
+      "- **(B)** ${4:Option B}",
+      "- **(C)** ${5:Option C}",
+      "- **(D)** ${6:Option D}",
+      "",
+      "**Answer:** ${7|A,B,C,D|}",
+      "",
+      "---",
+      ""
+    ]
+  },
+
+  "NAT Question": {
+    "prefix": "nat",
+    "scope": "markdown",
+    "description": "GATE NAT (numerical answer) question block",
+    "body": [
+      "## Q${1:ID}",
+      "",
+      "[NAT]",
+      "",
+      "${2:Question text here.}",
+      "",
+      "**Answer:** ${3:value}",
+      "",
+      "---",
+      ""
+    ]
+  },
+
+  "MSQ Question": {
+    "prefix": "msq",
+    "scope": "markdown",
+    "description": "GATE MSQ (multiple select) question block",
+    "body": [
+      "## Q${1:ID}",
+      "",
+      "[MSQ]",
+      "",
+      "${2:Question text here.} (Select all that apply)",
+      "",
+      "- **(A)** ${3:Option A}",
+      "- **(B)** ${4:Option B}",
+      "- **(C)** ${5:Option C}",
+      "- **(D)** ${6:Option D}",
+      "",
+      "**Answer:** ${7:A, C}",
+      "",
+      "---",
+      ""
+    ]
+  },
+
+  "MCQ with Image": {
+    "prefix": "mcqi",
+    "scope": "markdown",
+    "description": "GATE MCQ question block with image placeholder",
+    "body": [
+      "## Q${1:ID}",
+      "",
+      "[MCQ]",
+      "",
+      "${2:Question text here.}",
+      "",
+      "![${3:description}](img/${4:filename}.png)",
+      "",
+      "- **(A)** ${5:Option A}",
+      "- **(B)** ${6:Option B}",
+      "- **(C)** ${7:Option C}",
+      "- **(D)** ${8:Option D}",
+      "",
+      "**Answer:** ${9|A,B,C,D|}",
+      "",
+      "---",
+      ""
+    ]
+  },
+
+  // ─── Math Shortcuts ───────────────────────────────────────────────────────
+  "Fraction": {
+    "prefix": "frac",
+    "scope": "markdown",
+    "description": "LaTeX fraction",
+    "body": "\\frac{${1:num}}{${2:den}}"
+  },
+
+  "Binomial Coefficient": {
+    "prefix": "binom",
+    "scope": "markdown",
+    "description": "LaTeX binomial coefficient",
+    "body": "\\binom{${1:n}}{${2:r}}"
+  },
+
+  "Summation": {
+    "prefix": "sum",
+    "scope": "markdown",
+    "description": "LaTeX summation",
+    "body": "\\sum_{${1:i=1}}^{${2:n}} ${3:x_i}"
+  },
+
+  "Product": {
+    "prefix": "prod",
+    "scope": "markdown",
+    "description": "LaTeX product",
+    "body": "\\prod_{${1:i=1}}^{${2:n}} ${3:x_i}"
+  },
+
+  "Integral": {
+    "prefix": "intg",
+    "scope": "markdown",
+    "description": "LaTeX integral",
+    "body": "\\int_{${1:-\\infty}}^{${2:\\infty}} ${3:f(x)} \\, dx"
+  },
+
+  "Display Math Block": {
+    "prefix": "dm",
+    "scope": "markdown",
+    "description": "Display math block ($$...$$)",
+    "body": [
+      "$$",
+      "${1:expression}",
+      "$$"
+    ]
+  },
+
+  "Inline Math": {
+    "prefix": "im",
+    "scope": "markdown",
+    "description": "Inline math ($...$)",
+    "body": "\\$${1:expression}\\$"
+  },
+
+  "Probability P(A)": {
+    "prefix": "prob",
+    "scope": "markdown",
+    "description": "P(event) notation",
+    "body": "P(${1:A})"
+  },
+
+  "Conditional Probability": {
+    "prefix": "condp",
+    "scope": "markdown",
+    "description": "P(A|B) conditional probability",
+    "body": "P(${1:A} \\mid ${2:B})"
+  },
+
+  "Expected Value": {
+    "prefix": "ex",
+    "scope": "markdown",
+    "description": "E[X] expected value",
+    "body": "E[${1:X}]"
+  },
+
+  "Variance": {
+    "prefix": "var",
+    "scope": "markdown",
+    "description": "Var(X) variance",
+    "body": "\\text{Var}(${1:X})"
+  },
+
+  "Normal Distribution": {
+    "prefix": "normal",
+    "scope": "markdown",
+    "description": "Normal distribution notation",
+    "body": "\\mathcal{N}(${1:\\mu}, ${2:\\sigma^2})"
+  },
+
+  "Permutation nPr": {
+    "prefix": "npr",
+    "scope": "markdown",
+    "description": "nPr permutation",
+    "body": "^{${1:n}}P_{${2:r}}"
+  },
+
+  "Combination nCr": {
+    "prefix": "ncr",
+    "scope": "markdown",
+    "description": "nCr combination (binom form)",
+    "body": "\\binom{${1:n}}{${2:r}}"
+  }
+}

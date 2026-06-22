@@ -1,0 +1,92 @@
+{
+  "diffEditor.codeLens": true,
+
+  "files.exclude": {
+    // ── ML lectures — all hidden (set false to show when switching to ML) ──
+    "content/gate-da-ml/01-regression.md":                  true,
+    "content/gate-da-ml/01-regression-pyq.md":              true,
+    "content/gate-da-ml/02-classification.md":              true,
+    "content/gate-da-ml/02-classification-pyq.md":          true,
+    "content/gate-da-ml/03-classification-probabilistic.md":      true,
+    "content/gate-da-ml/03-classification-probabilistic-pyq.md":  true,
+    "content/gate-da-ml/04-classification-svm-trees.md":          true,
+    "content/gate-da-ml/04-classification-svm-trees-pyq.md":      true,
+    "content/gate-da-ml/05-model-evaluation.md":            true,
+    "content/gate-da-ml/05-model-evaluation-pyq.md":        true,
+    "content/gate-da-ml/06-neural-networks.md":             true,
+    "content/gate-da-ml/06-neural-networks-pyq.md":         true,
+    "content/gate-da-ml/07-clustering.md":                  true,
+    "content/gate-da-ml/07-clustering-pyq.md":              true,
+    "content/gate-da-ml/08-pca.md":                         true,
+    "content/gate-da-ml/08-pca-pyq.md":                     true,
+
+    "lectures/gate-da-ml/01-regression.yaml":               true,
+    "lectures/gate-da-ml/02-classification.yaml":           true,
+    "lectures/gate-da-ml/03-classification-probabilistic.yaml":  true,
+    "lectures/gate-da-ml/04-classification-svm-trees.yaml": true,
+    "lectures/gate-da-ml/05-model-evaluation.yaml":         true,
+    "lectures/gate-da-ml/06-neural-networks.yaml":          true,
+    "lectures/gate-da-ml/07-clustering.yaml":               true,
+    "lectures/gate-da-ml/08-pca.yaml":                      true,
+
+    "docs/gate-da-ml/lecture/01-regression/":               true,
+    "docs/gate-da-ml/lecture/02-classification/":           true,
+    "docs/gate-da-ml/lecture/03-classification-probabilistic/":  true,
+    "docs/gate-da-ml/lecture/04-classification-svm-trees/": true,
+    "docs/gate-da-ml/lecture/05-model-evaluation/":         true,
+    "docs/gate-da-ml/lecture/06-neural-networks/":          true,
+    "docs/gate-da-ml/lecture/07-clustering/":               true,
+    "docs/gate-da-ml/lecture/08-pca/":                      true,
+
+    // ── prob-stats lectures — set true to HIDE, false to SHOW ─────────────
+    // To switch focus: set current lecture to true, next to false
+    "content/gate-da-prob-stats/01-counting-combinatorics.md":         false,
+    "content/gate-da-prob-stats/02-probability-basics.md":             true,
+    "content/gate-da-prob-stats/03-conditional-probability-bayes.md":  true,
+    "content/gate-da-prob-stats/04-random-variables.md":               true,
+    "content/gate-da-prob-stats/05-discrete-distributions.md":         true,
+    "content/gate-da-prob-stats/06-continuous-distributions.md":       true,
+    "content/gate-da-prob-stats/07-descriptive-statistics.md":         true,
+    "content/gate-da-prob-stats/08-clt-confidence-intervals.md":       true,
+    "content/gate-da-prob-stats/09-hypothesis-testing.md":             true,
+    "content/gate-da-prob-stats/10-covariance-correlation.md":         true,
+
+    "lectures/gate-da-prob-stats/01-counting-combinatorics.yaml":        false,
+    "lectures/gate-da-prob-stats/02-probability-basics.yaml":            true,
+    "lectures/gate-da-prob-stats/03-conditional-probability-bayes.yaml": true,
+    "lectures/gate-da-prob-stats/04-random-variables.yaml":              true,
+    "lectures/gate-da-prob-stats/05-discrete-distributions.yaml":        true,
+    "lectures/gate-da-prob-stats/06-continuous-distributions.yaml":      true,
+    "lectures/gate-da-prob-stats/07-descriptive-statistics.yaml":        true,
+    "lectures/gate-da-prob-stats/08-clt-confidence-intervals.yaml":      true,
+    "lectures/gate-da-prob-stats/09-hypothesis-testing.yaml":            true,
+    "lectures/gate-da-prob-stats/10-covariance-correlation.yaml":        true,
+
+    "docs/gate-da-prob-stats/lecture/01-counting-combinatorics/":        false,
+    "docs/gate-da-prob-stats/lecture/02-probability-basics/":            true,
+    "docs/gate-da-prob-stats/lecture/03-conditional-probability-bayes/": true,
+    "docs/gate-da-prob-stats/lecture/04-random-variables/":              true,
+    "docs/gate-da-prob-stats/lecture/05-discrete-distributions/":        true,
+    "docs/gate-da-prob-stats/lecture/06-continuous-distributions/":      true,
+    "docs/gate-da-prob-stats/lecture/07-descriptive-statistics/":        true,
+    "docs/gate-da-prob-stats/lecture/08-clt-confidence-intervals/":      true,
+    "docs/gate-da-prob-stats/lecture/09-hypothesis-testing/":            true,
+    "docs/gate-da-prob-stats/lecture/10-covariance-correlation/":        true,
+
+    // ── Noise reduction ───────────────────────────────────────────────────
+    "docs/assets/": true,
+    "docs/robots.txt": true,
+    "docs/index.html": true,
+    "scripts/": true,
+    "templates/": true,
+    ".venv/": true,
+    ".github/": true,
+    "__pycache__/": true,
+    "requirements.txt": true
+  },
+
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "README.md": "EDITING_GUIDE.md"
+  }
+}
