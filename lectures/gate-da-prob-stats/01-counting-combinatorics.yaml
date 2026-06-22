@@ -2,8 +2,9 @@ title: Counting, Permutations and Combinations
 course: gate-da-prob-stats
 slug: 01-counting-combinatorics
 date: '2026-06-21'
+
 sections:
-- heading: THE PRODUCT RULE
+- heading: Product Rule
   questions:
   - Q001
   - Q002
@@ -14,6 +15,20 @@ sections:
   - Q007
   - Q008
   - Q009
+
+- heading: Sum Rule
+  questions:
+  - Q010
+  - Q011
+  - Q012
+
+- heading: Product Rule and Sum Rule
+  questions:
+  - Q013
+  - Q014
+  - Q015
+
+-heading : Subtraction Rule
 
 
 
